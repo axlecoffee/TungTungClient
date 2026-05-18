@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "tungtungclient",
+  "version": "${version}",
+  "name": "TungTungClient",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      {
+        "value": "aura.tungtungclient.TungTungClient",
+        "adapter": "kotlin"
+      }
+    ]
+  },
+  "mixins": [
+    "tungtungclient.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-language-kotlin": ">=${kotlin_loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
