@@ -5,6 +5,7 @@ plugins {
   kotlin("jvm") version "2.3.21"
   id("fabric-loom") version "1.16-SNAPSHOT"
   id("maven-publish")
+  id("coffee.axle.blahaj")
 }
 
 version = project.property("mod_version") as String
@@ -32,13 +33,17 @@ repositories {
   // See https://docs.gradle.org/current/userguide/declaring_repositories.html
   // for more information about repositories.
   maven("https://pkgs.dev.azure.com/djtheredstoner/DevAuth/_packaging/public/maven/v1")
+  maven("https://maven.parchmentmc.org")
 
 }
 
 dependencies {
   // To change the versions see the gradle.properties file
   minecraft("com.mojang:minecraft:${project.property("minecraft_version")}")
-  mappings(loom.officialMojangMappings())
+//  mappings(loom.layered {
+//    officialMojangMappings()
+////    parchment("org.parchmentmc.data:parchment-1.21.10:2025.10.12@zip")
+//  })
   modImplementation("net.fabricmc:fabric-loader:${project.property("loader_version")}")
   modImplementation("net.fabricmc:fabric-language-kotlin:${project.property("kotlin_loader_version")}")
 

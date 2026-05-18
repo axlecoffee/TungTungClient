@@ -1,4 +1,4 @@
-package aura.tungtungclient.event.events
+package aura.tungtungclient.event
 
 enum class Priority {
   HIGHEST,

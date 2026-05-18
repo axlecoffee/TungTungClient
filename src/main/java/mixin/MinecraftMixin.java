@@ -10,8 +10,12 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(Minecraft.class)
 public class MinecraftMixin {
-    @Inject(method = "tick", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "tick", at = @At("HEAD"))
     void onStartTick(CallbackInfo ci) {
-        if (EventBus.post(TickEvent.Start.INSTANCE)) ci.cancel();
+        EventBus.post(TickEvent.Start.INSTANCE);
+    }
+    @Inject(method = "tick", at = @At("TAIL"))
+    void onEndTick(CallbackInfo ci) {
+        EventBus.post(TickEvent.End.INSTANCE);
     }
 }

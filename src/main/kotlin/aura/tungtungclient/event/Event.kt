@@ -1,8 +1,10 @@
 package aura.tungtungclient.event
 
-import aura.tungtungclient.event.events.Priority
-
-open class Event(val cancellable: Boolean) {
+abstract class Event(val cancellable: Boolean = false) {
   var scheduleCancel = false
   val events = mutableSetOf<EventState>()
+
+  fun cancel() {
+    scheduleCancel = true
+  }
 }
