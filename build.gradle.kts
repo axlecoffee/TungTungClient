@@ -7,5 +7,7 @@ blahaj {
 	}
 	setup {
 		devauth()
+//		mocha("0.2.1")
+//		hypixel()
 	}
 }
