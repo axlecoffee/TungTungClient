@@ -1,11 +1,18 @@
 package aura.tungtungclient.event
 
-object EventBus {
-  val events = mutableMapOf<Event, () -> Unit>()
+import aura.tungtungclient.event.events.Priority
 
-  fun Event.post() {
-    this.events.forEach {
-      it.invoke()
+object EventBus {
+  @JvmStatic
+  fun Event.post(): Boolean {
+    var shouldCancel = this.scheduleCancel
+    this.events.sortedBy { it.priority.ordinal }.filter { it.runIf() }.forEach {
+      if (it.action.invoke() as? Boolean == true && this.cancellable) shouldCancel = true
     }
+    return shouldCancel
+  }
+
+  fun Event.register(priority: Priority = Priority.NORMAL, runIf: () -> Boolean = { true }, action: () -> Any?) {
+    this.events.add(EventState(action, priority, runIf))
   }
 }
