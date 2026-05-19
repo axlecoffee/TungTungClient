@@ -1,4 +1,11 @@
 pluginManagement {
+	plugins {
+		id("net.fabricmc.fabric-loom") version "1.16.1"
+		id("net.fabricmc.fabric-loom-remap") version "1.16.1"
+		id("dev.architectury.loom") version "1.14.473"
+		kotlin("jvm") version "2.3.10"
+		kotlin("plugin.serialization") version "2.3.10"
+	}
 	repositories {
 		mavenLocal()
 		maven("https://maven.axle.coffee/releases")
@@ -13,11 +20,6 @@ pluginManagement {
 }
 
 plugins {
-	id("net.fabricmc.fabric-loom") version "1.16.1" apply false
-	id("net.fabricmc.fabric-loom-remap") version "1.16.1" apply false
-	id("dev.architectury.loom") version "1.14.473" apply false
-	kotlin("jvm") version "2.3.10" apply false
-	kotlin("plugin.serialization") version "2.3.10" apply false
 	id("coffee.axle.blahaj") version "3.1.0"
 	id("dev.kikugie.stonecutter") version "0.9.1"
 }
