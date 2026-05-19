@@ -1,34 +1,8 @@
 pluginManagement {
-	plugins {
-		id("net.fabricmc.fabric-loom") version "1.16.1"
-		id("net.fabricmc.fabric-loom-remap") version "1.16.1"
-		id("dev.architectury.loom") version "1.14.473"
-		kotlin("jvm") version "2.3.10"
-		kotlin("plugin.serialization") version "2.3.10"
-	}
 	repositories {
-		mavenLocal()
-		maven("https://maven.axle.coffee/releases")
-		mavenCentral()
+		maven("https://maven.fabricmc.net/") {
+			name = "Fabric"
+		}
 		gradlePluginPortal()
-		maven("https://maven.fabricmc.net/")
-		maven("https://maven.architectury.dev")
-		maven("https://maven.minecraftforge.net")
-		maven("https://maven.kikugie.dev/snapshots")
-		maven("https://maven.kikugie.dev/releases")
 	}
 }
-
-plugins {
-	id("coffee.axle.blahaj") version "3.1.0"
-	id("dev.kikugie.stonecutter") version "0.9.1"
-}
-
-blahaj {
-	init(rootProject) {
-		mc("1.21.10", "fabric")
-//		mc("1.21.11", "fabric")
-	}
-}
-
-rootProject.name = "TungTungClient"

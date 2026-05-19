@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "tungtungclient",
-  "version": "${modversion}",
+  "version": "6.7",
   "name": "TungTungClient",
   "description": "",
   "authors": [],
@@ -20,9 +20,9 @@
     "tungtungclient.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.19.2",
-    "fabric-language-kotlin": ">=1.13.11",
+    "fabricloader": ">=${loader_version}",
+    "fabric-language-kotlin": ">=${kotlin_loader_version}",
     "fabric-api": "*",
-    "minecraft": "${mc}"
+    "minecraft": "${minecraft_version}"
   }
 }
