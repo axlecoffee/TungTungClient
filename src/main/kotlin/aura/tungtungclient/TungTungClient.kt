@@ -13,6 +13,7 @@ import net.minecraft.client.Minecraft
 import net.minecraft.network.chat.Component
 import java.awt.Color
 
+@JvmField
 val mc = Minecraft.getInstance()
 class TungTungClient: ClientModInitializer {
 
