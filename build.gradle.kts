@@ -47,6 +47,8 @@ dependencies {
   modImplementation("net.fabricmc:fabric-language-kotlin:${project.property("kotlin_loader_version")}")
   modImplementation("net.fabricmc.fabric-api:fabric-api:${project.property("fabric_version")}")
   modRuntimeOnly("me.djtheredstoner:DevAuth-fabric:1.2.2")
+  implementation("io.github.classgraph:classgraph:4.8.174")
+  include("io.github.classgraph:classgraph:4.8.174")
 }
 
 tasks.processResources {
